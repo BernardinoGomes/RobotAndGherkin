@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-05-24T23:10:35.338041" rpa="false" schemaversion="5">
+<suite id="s1" name="TesteCase2" source="C:\CursoUdemyRobotBasico\RobotFramework\WebTesting\SegundoDesafioSaucedemo\Testes\TesteCase2.robot">
+<test id="s1-t1" name="Caso de Teste 02 - Autenticação do usuário performance_glitch_userer e finalizar pedido" line="12">
+<kw name="Abrir Navegador Chrome Sem Popups" owner="LoginPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-24T23:10:35.635828" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002482DE4E3C0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.635511" elapsed="0.000359"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.636019" elapsed="0.000155"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.636296" elapsed="0.000129"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.636537" elapsed="0.000123"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.636774" elapsed="0.000121"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-default-browser-check</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.637004" elapsed="0.000124"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.637236" elapsed="0.000119"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-05-24T23:10:35.637589" level="INFO">${exclude_switches} = ['enable-automation']</msg>
+<var>${exclude_switches}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.637465" elapsed="0.000153"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>excludeSwitches</arg>
+<arg>${exclude_switches}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.637726" elapsed="0.000148"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>useAutomationExtension</arg>
+<arg>${False}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.637984" elapsed="0.000141"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:35.638418" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-24T23:10:35.638245" elapsed="1.848292"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:37.487387" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-24T23:10:37.486957" elapsed="0.996272"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.483512" elapsed="0.039404"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:35.634728" elapsed="2.888468"/>
+</kw>
+<kw name="Verificar Campos da Página de Login" owner="LoginPage">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:38.538786" level="INFO">${url_atual} = https://www.saucedemo.com/</msg>
+<var>${url_atual}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.524340" elapsed="0.014509"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${url_atual}</arg>
+<arg>${URL}</arg>
+<arg>msg=A URL atual (${url_atual}) não corresponde à esperada (${URL})</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.539124" elapsed="0.000583"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_USERNAME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.539863" elapsed="0.035183"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PASS}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.575410" elapsed="0.027553"/>
+</kw>
+<doc>Valida a URL e a visibilidade dos campos de login</doc>
+<status status="PASS" start="2025-05-24T23:10:38.523629" elapsed="0.079524"/>
+</kw>
+<kw name="Realizar Login" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:38.604155" level="INFO">Typing text 'performance_glitch_user' into text field 'id=user-name'.</msg>
+<arg>${INPUT_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.603912" elapsed="0.212415"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:38.816774" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>${INPUT_PASS}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.816539" elapsed="0.089952"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTT_SUBMIT_LOGIN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.906712" elapsed="0.017996"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:38.925314" level="INFO">Clicking element 'id=login-button'.</msg>
+<arg>${BTT_SUBMIT_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:38.925021" elapsed="5.115241"/>
+</kw>
+<arg>${USER_GLITCH}</arg>
+<arg>${PASS_PADRAO}</arg>
+<doc>Realiza login com o usuário e senha fornecidos</doc>
+<status status="PASS" start="2025-05-24T23:10:38.603529" elapsed="5.436931"/>
+</kw>
+<kw name="Verificar os elementos da página produto antes de adicionar ao carrinho" owner="ProductsPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PRIMEIRO_PRODUTO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:44.041619" elapsed="0.041803"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEGUNDO_PRODUTO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:44.083754" elapsed="0.023193"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_CARRINHO_PRIMEIRO_PRODUTO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:44.107388" elapsed="0.020644"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_CARRINHO_SEGUNDO_PRODUTO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:44.128448" elapsed="0.022277"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:44.041001" elapsed="0.109842"/>
+</kw>
+<kw name="Adicionar o segundo produto no carrinho" owner="ProductsPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:44.151604" level="INFO">Clicking button '(//button[contains(.,'Add to cart')])[2]'.</msg>
+<arg>locator=${ADD_CARRINHO_SEGUNDO_PRODUTO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:44.151401" elapsed="0.069040"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-24T23:10:49.221516" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-24T23:10:44.220745" elapsed="5.001109"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:49.429488" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-65.png"&gt;&lt;img src="selenium-screenshot-65.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:10:49.222487" elapsed="0.207185"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:44.151144" elapsed="5.278711"/>
+</kw>
+<kw name="Adicionar um outro produto no carrinho" owner="ProductsPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:49.430716" level="INFO">Clicking button '(//button[contains(.,'Add to cart')])[1]'.</msg>
+<arg>locator=${ADD_CARRINHO_PRIMEIRO_PRODUTO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:49.430504" elapsed="0.076072"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-24T23:10:54.507999" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-24T23:10:49.506894" elapsed="5.001469"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.687510" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-66.png"&gt;&lt;img src="selenium-screenshot-66.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.509372" elapsed="0.178326"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:49.430220" elapsed="5.257623"/>
+</kw>
+<kw name="Verificar os elementos da página produto após inserção ao carrinho" owner="ProductsPage">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.707681" level="INFO">Element '(//button[contains(.,'Remove')])[1]' is displayed.</msg>
+<arg>${DELET_CARRINHO_PRIMEIRO_PRODUTO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.688476" elapsed="0.019294"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.728134" level="INFO">Element '(//button[contains(.,'Remove')])[2]' is displayed.</msg>
+<arg>${DELET_CARRINHO_SEGUNDO_PRODUTO}</arg>
+<arg>timeout=5s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.707953" elapsed="0.020328"/>
+</kw>
+<doc>Verifica se o link do carrinho de compras está visível na página</doc>
+<status status="PASS" start="2025-05-24T23:10:54.688210" elapsed="0.040198"/>
+</kw>
+<kw name="Remover Primeiro Produto do Carrinho" owner="ProductsPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DELET_CARRINHO_PRIMEIRO_PRODUTO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.729242" elapsed="0.017484"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.747216" level="INFO">Clicking button '(//button[contains(.,'Remove')])[1]'.</msg>
+<arg>${DELET_CARRINHO_PRIMEIRO_PRODUTO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.746988" elapsed="0.073251"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.943337" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-67.png"&gt;&lt;img src="selenium-screenshot-67.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.820578" elapsed="0.123005"/>
+</kw>
+<doc>Remove o primeiro produto adicionado ao carrinho</doc>
+<status status="PASS" start="2025-05-24T23:10:54.728786" elapsed="0.214976"/>
+</kw>
+<kw name="Acessar carrinho" owner="CartPage">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.963556" level="INFO">Element '//a[contains(@class,'shopping_cart_link')]' is displayed.</msg>
+<arg>${BTT_CARRINHO}</arg>
+<arg>timeout=5s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.944750" elapsed="0.018893"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:54.964059" level="INFO">Clicking element 'xpath=//a[contains(@class,'shopping_cart_link')]'.</msg>
+<arg>xpath=${BTT_CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:54.963829" elapsed="0.075578"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:54.944474" elapsed="0.095285"/>
+</kw>
+<kw name="Verificar se o carrinho está com produto ou vazio" owner="CheckoutPage">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>cart.html</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.040810" elapsed="0.006700"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.047802" elapsed="0.018551"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.081837" level="INFO">Current page contains element 'xpath=//div[@class='cart_quantity'][contains(.,'1')]'.</msg>
+<arg>xpath=//div[@class='cart_quantity'][contains(.,'1')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.066756" elapsed="0.015206"/>
+</kw>
+<msg time="2025-05-24T23:10:55.082099" level="INFO">${elemento_existe} = True</msg>
+<var>${elemento_existe}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[@class='cart_quantity'][contains(.,'1')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.066560" elapsed="0.015566"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Carrinho adicionado com sucesso</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.082497" elapsed="0.000282"/>
+</kw>
+<arg>${elemento_existe}</arg>
+<arg>Log To Console</arg>
+<arg>Carrinho adicionado com sucesso</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Carrinho vazio, volte para a página de produtos e adicione produtos</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.082283" elapsed="0.000731"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.198287" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-68.png"&gt;&lt;img src="selenium-screenshot-68.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.083174" elapsed="0.115255"/>
+</kw>
+<doc>Verifica se o título da página corresponde à categoria "Carrinho de Compras"
+Verifica se há o elemento input para fazer a validação da quantidade
+Verifica se existe um input com value='1', caso positvo há produtos no carrinho</doc>
+<status status="PASS" start="2025-05-24T23:10:55.040346" elapsed="0.158237"/>
+</kw>
+<kw name="Ir para o CHECKOUT" owner="CheckoutPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTT_CHECKOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.199313" elapsed="0.017694"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.217432" level="INFO">Clicking element 'xpath=//button[contains(.,'Checkout')]'.</msg>
+<arg>xpath=${BTT_CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.217201" elapsed="0.090925"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.425685" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-69.png"&gt;&lt;img src="selenium-screenshot-69.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.308421" elapsed="0.117418"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:55.199032" elapsed="0.226968"/>
+</kw>
+<kw name="Verificar o título da página e Preencher os campos" owner="CheckoutPage">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-step-one.html</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.427773" elapsed="0.005883"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_FIRSTNAME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.433844" elapsed="0.018904"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_LASTNAME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.452949" elapsed="0.023010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_ZIP_CODE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.476227" elapsed="0.026342"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.502990" level="INFO">Typing text 'FIRST NAME saucedemo' into text field '//input[contains(@placeholder,'First Name')]'.</msg>
+<arg>${INPUT_FIRSTNAME}</arg>
+<arg>${TEXTO_FIRSTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.502750" elapsed="0.148954"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.652366" level="INFO">Typing text 'LAST NAME saucedemo' into text field '//input[contains(@placeholder,'Last Name')]'.</msg>
+<arg>${INPUT_LASTNAME}</arg>
+<arg>${TEXTO_LASTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.651981" elapsed="0.136583"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:10:55.789372" level="INFO">Typing text '50070125' into text field '//input[contains(@placeholder,'Zip/Postal Code')]'.</msg>
+<arg>${INPUT_ZIP_CODE}</arg>
+<arg>${NUMERO_ZIP_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.788928" elapsed="0.129836"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-24T23:11:00.920062" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-24T23:10:55.919068" elapsed="5.001404"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:01.090673" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-70.png"&gt;&lt;img src="selenium-screenshot-70.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:11:00.921203" elapsed="0.169655"/>
+</kw>
+<doc>Verifica o título da página de checkout e preenche os campos de entrada</doc>
+<status status="PASS" start="2025-05-24T23:10:55.427261" elapsed="5.663792"/>
+</kw>
+<kw name="Verificar e Selecionar o botão BTT_CONTINUE" owner="CheckoutPage">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:01.103630" level="INFO">Current page contains element '//input[contains(@type,'submit')]'.</msg>
+<arg>${BTT_CONTINUE}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-24T23:11:01.091685" elapsed="0.012032"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:01.104104" level="INFO">Clicking element '//input[contains(@type,'submit')]'.</msg>
+<arg>${BTT_CONTINUE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:11:01.103896" elapsed="0.084607"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-24T23:11:06.189761" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-24T23:11:01.188795" elapsed="5.001122"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:06.348141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-71.png"&gt;&lt;img src="selenium-screenshot-71.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:11:06.190218" elapsed="0.158121"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:11:01.091418" elapsed="5.257111"/>
+</kw>
+<kw name="Verificar o título da página e finalizar pedido" owner="CheckoutPage">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-step-two.html</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-24T23:11:06.349176" elapsed="0.004548"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:06.364639" level="INFO">Current page contains element '//button[contains(.,'Finish')]'.</msg>
+<arg>${BTT_FINISH}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-24T23:11:06.353911" elapsed="0.010816"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:06.365166" level="INFO">Clicking element '//button[contains(.,'Finish')]'.</msg>
+<arg>${BTT_FINISH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T23:11:06.364947" elapsed="0.071570"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-24T23:11:11.437824" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-24T23:11:06.436784" elapsed="5.001383"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>checkout-complete.html</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-24T23:11:11.438790" elapsed="0.018213"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:11.600131" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-72.png"&gt;&lt;img src="selenium-screenshot-72.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:11:11.457845" elapsed="0.142491"/>
+</kw>
+<doc>Verifica o título da página de checkout e preenche os campos de entrada</doc>
+<status status="PASS" start="2025-05-24T23:11:06.348914" elapsed="5.251612"/>
+</kw>
+<kw name="Fechar o navegador" owner="LoginPage" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-24T23:11:11.701653" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-73.png"&gt;&lt;img src="selenium-screenshot-73.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-24T23:11:11.601280" elapsed="0.100556"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-24T23:11:11.702117" elapsed="2.290697"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:11:11.600993" elapsed="2.392007"/>
+</kw>
+<status status="PASS" start="2025-05-24T23:10:35.633755" elapsed="38.359497"/>
+</test>
+<doc>Suíte de testes para automação frontend do SauceDemo</doc>
+<status status="PASS" start="2025-05-24T23:10:35.339677" elapsed="38.654663"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TesteCase2">TesteCase2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
