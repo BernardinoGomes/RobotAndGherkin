@@ -1,91 +1,84 @@
-# Cypress Automation Suite
+# 🤖 ExemplosRobotAndGherkin
 
-## 📌 About
+Projeto de automação de testes utilizando **Robot Framework** com abordagem **BDD (Behavior Driven Development)**, estruturado com Page Object Pattern.
 
-This is a **professional Cypress automation suite** designed to showcase **advanced testing skills** and **best practices** in API and UI test automation. The project follows clean architecture principles, ensuring maintainability and scalability through modular design and reusable components.
-
----
-
-## 📂 Project Structure
-
-```
-cypress-automation-suite
-├── api
-│   ├── features       # API test cases organized by endpoint
-│   ├── interfaces     # Type-safe request/response definitions
-│   ├── services       # API service classes with encapsulated methods
-│   ├── fixtures       # Test data and mock responses
-├── config             # Configuration files
-├── support
-│   ├── cypress        # Custom commands and utilities
-├── cypress.config.ts  # Cypress configuration file
-├── package.json       # Project dependencies and scripts
-├── tsconfig.json      # TypeScript configuration
-└── README.md          # Project documentation
-```
+BDD feito a partir da UserStory.US.Login.TXT
 
 ---
 
-## 🚀 Getting Started
+## 📁 Estrutura do Projeto
 
-### 📦 Installation
-
-Ensure you have **Node.js (>=16)** installed, then run:
-
-```sh
-npm install
+```
+ExemplosRobotAndGherkin/
+├── resources/              # Keywords organizadas por páginas
+│   ├── CartPage.robot
+│   ├── CheckoutPage.robot
+│   ├── LoginPage.robot
+│   ├── ProductsPage.robot
+│   └── variaveis/
+│       └── Config.robot    # Variáveis globais
+│
+├── tests/                  # Casos de teste e passos BDD
+│   ├── TesteCase1.robot
+│   ├── TesteCase2.robot
+│   ├── TesteCase3.robot
+│   └── steps.robot         # Mapeamento dos passos BDD
+│
+└── results/                # Relatórios de execução
+    ├── log.html
+    ├── report.html
+    └── output.xml
 ```
 
-### ▶ Running Tests
+---
 
-- **Run all tests:**
-  ```sh
-  npm run cy:run
+## 🚀 Tecnologias Utilizadas
+
+- [Robot Framework](https://robotframework.org/)
+- SeleniumLibrary
+- Estrutura BDD (estilo Gherkin em `.robot`)
+- Page Object Pattern
+
+---
+
+## 🧪 Tipos de Testes
+
+- Funcionais
+- Regressão
+- Aceitação (BDD)
+- Testes ponta a ponta (E2E)
+
+---
+
+## ⚙️ Pré-requisitos
+
+- Python 3.x
+- Instalar o Robot Framework:
+  ```bash
+  pip install robotframework selenium
   ```
-- **Run tests in interactive mode:**
-  ```sh
-  npm run cy:open
-  ```
 
 ---
 
-## 🔍 API Automation Implementation
+## ▶️ Como Executar os Testes
 
-### ✅ **Feature: API Testing for Posts**
+1. Acesse o diretório do projeto:
+   ```bash
+   cd ExemplosRobotAndGherkin/
+   ```
 
-- Implements **CRUD happy path** test scenarios for `https://jsonplaceholder.typicode.com/posts`
-- Utilizes **isolated interfaces** to ensure type safety in request/response handling
-- Service layer structured using a **dedicated class (`PostService`)** encapsulating API calls
-- Configuration centralized in `api.config.ts` for improved maintainability
-- Cypress test suite structured in `api/features/01-posts.spec.ts`
+2. Execute um teste:
+   ```bash
+   robot tests/TesteCase1.robot
+   ```
 
-### 🔹 **Key Technical Practices**
-
-- **Interface Isolation:** API request/response models are defined in TypeScript (`api/interfaces/posts`)
-- **Service Encapsulation:** API calls are handled through the `PostService` class in `api/services`
-- **Modular Test Design:** Tests are independent, maintainable, and reusable across different scenarios
-- **Configuration Abstraction:** API base URLs and settings are managed in `config/api.config.ts`
-
+3. Veja os relatórios em `results/`:
+   - `log.html`
+   - `report.html`
+   - `output.xml`
 ---
 
-## 📌 Features (Planned & Implemented)
+## 📌 Observações
 
-- ✅ API Testing with Cypress
-- ✅ TypeScript Integration
-- ✅ Isolated Interfaces for API Requests/Responses
-- ✅ Encapsulated Service Layer
-- ✅ Custom Commands
-- ⏳ UI Testing (Coming Soon)
-- ⏳ Continuous Integration Setup
-
----
-
-## ⚠️ Disclaimer
-
-This project is in **active development** and is **not complete**. Expect frequent updates and improvements as new features are added.
-
----
-
-## 📄 License
-
-This project is open-source and free to use under the [MIT License](LICENSE).
+- Projeto voltado para aprendizado e demonstração de automação com Robot Framework.
+- Estrutura modularizada para facilitar manutenção e reutilização de keywords.
