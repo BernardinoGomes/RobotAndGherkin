@@ -1,0 +1,29 @@
+Sendo um usuário do site saucedemo.com
+Quero fazer meu login
+Para que eu possa realizar a compra de produtos
+
+
+Cadastro
+Dado que acesso a página de login
+Quando submeto o meu login com usuário e senha
+Então devo ser redirecionado para a home do site
+
+Nenhum campo não informado
+Dado que acesso a página de login
+Quando submeto o meu login sem o usuário e sem senha 
+Então devo ver a mensagem "Epic sadface: Username is required"
+
+Usuário não informado
+Dado que acesso a página de login
+Quando submeto o meu login sem o usuário e com senha 
+Então devo ver a mensagem "Epic sadface: Username is required"
+
+Senha não informado
+Dado que acesso a página de login
+Quando submeto o meu login com o usuário e sem senha 
+Então devo ver a mensagem "Epic sadface: Password is required"
+
+Dados inválidos
+Dado que acesso a página de login
+Quando submeto o meu login com o usuário e senha incorretos
+Então devo ver a mensagem "Epic sadface: Username and password do not match any user in this service"
