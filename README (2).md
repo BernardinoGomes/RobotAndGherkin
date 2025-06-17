@@ -42,10 +42,6 @@ ExemplosRobotAndGherkin/
 ---
 
 ## 🧪 Tipos de Testes
-
-- Funcionais
-- Regressão
-- Aceitação (BDD)
 - Testes ponta a ponta (E2E)
 
 ---
