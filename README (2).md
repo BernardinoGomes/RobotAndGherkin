@@ -18,7 +18,7 @@ ExemplosRobotAndGherkin/
 │   └── variaveis/
 │       └── Config.robot    # Variáveis globais
 │
-├── tests/                  # Casos de teste e passos BDD
+├── Testes/                  # Casos de teste e passos BDD
 │   ├── TesteCase1.robot
 │   ├── TesteCase2.robot
 │   ├── TesteCase3.robot
